@@ -10,11 +10,12 @@
         var menuBtn = $('#btn');
         var innerDiv = $('.inner');
         var div = $('nav .nav');
+        var box = $('.box');
      
 
 var windowWidth = window.innerWidth;
 var windowHeight = window.innerHeight;
-if (windowHeight > '1070' || windowWidth > '1910'){
+if (windowHeight > '1070' || windowWidth > '1910') {
         var objectBG = document.getElementById('my-svg');
         var secondBG = document.getElementById('secondBG');
         objectBG.style.display = 'none';
@@ -25,12 +26,12 @@ if (windowHeight > '1070' || windowWidth > '1910'){
 
 
 
-document.getElementById("my-svg").addEventListener("load", function() {
+document.getElementById("my-svg").addEventListener("load", function () {
    var doc = this.getSVGDocument();
-   var hand = doc.getElementById("svgback"); 
-    var pol = hand.getElementsByTagName("polygon"); 
+   var hand = doc.getElementById("svgback");
+    var pol = hand.getElementsByTagName("polygon");
     
-    for(var i = 0; i<pol.length; i++){
+    for (var i = 0; i<pol.length; i++){
 
         pol[i].setAttribute('style','transition: transform 1s');
         pol[i].addEventListener('mouseover',function(e){
@@ -55,7 +56,7 @@ document.getElementById("my-svg").addEventListener("load", function() {
            // innerDiv.addClass('visible');
             menuBtn.off('click');
             menuBtn.html('-').toggleClass('pulse');
-            
+            box.delay(snap * 4).animate({opacity: 0}, snap * 3);
             seven.animate({
                 width: '6.25%'
             }, snap, function() {
@@ -100,6 +101,7 @@ document.getElementById("my-svg").addEventListener("load", function() {
             menuBtn.html('+');
             innerDiv.css('opacity','0');
             setTimeout(function(){
+                box.delay(snap * 1).animate({opacity: 1}, snap * 5);
                 one.animate({
                     width: "0%"
                 }, snap, function() {

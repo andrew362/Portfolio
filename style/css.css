@@ -22,13 +22,33 @@ h1 {
     font-size: 2.2em;
 }
 
+h2 {
+    font-family: neon, lato, sans-serif;
+}
+
 body {
     padding: 0;
     margin: 0;
     overflow: hidden;
-
-
 }
+
+::-webkit-scrollbar-track
+{
+	-webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3);
+	background-color: #F5F5F5;
+}
+
+::-webkit-scrollbar
+{
+	width: 8px;
+	background-color: #F5F5F5;
+}
+
+::-webkit-scrollbar-thumb
+{
+	background-color: #777;
+}
+
 
 .background {
     position: absolute;
@@ -139,6 +159,7 @@ nav .nav {
     filter: grayscale(20%);
     display: flex;
     overflow: hidden;
+    color: #fff;
 }
 
 
@@ -170,7 +191,6 @@ nav .nav {
     left: 50%;
     text-align: center;
     transform: translateX(-50%);
-    font-family: neon;
     font-size: 1.1em;
     background-color: transparent;
     padding: 0;
@@ -185,13 +205,17 @@ nav .nav {
     top: 0;
     width: 0%;
     height: 100vh;
-    background-color: #c5e2dc;
+    background-color: rgba(15, 39, 128, 0.89);
 
 }
 
 .one .inner {
     overflow: auto;
     margin-top: 75px;
+}
+
+.one .inner h2{
+    padding-top: 15px;
 }
 
 .container {
@@ -202,10 +226,11 @@ nav .nav {
     justify-content: space-around;
     align-items: center;
     margin: 20px 0;
-    border-radius: 4px;
+    border: 4px double #111;
+    border-radius: 0px;
     transition: 0.5s all;
     background-color: #b1dfe88f;
-    box-shadow: 2px 2px 6px 3px #99b3c5;
+    box-shadow: 2px 2px 6px 3px #1d1d1d;
 }
 
 .container-title, .container-description{
@@ -286,32 +311,74 @@ nav .nav {
     bottom: 50%;
     width: 50%;
     height: 0vh;
-    background-color: #93c2e2;
+    background-color: rgba(4, 70, 109, 0.85);
 }
 
+.two .inner {
+    padding-top: 5%;
+    overflow: auto;
+}
 
-.about {
+.two .about {
+    width: 100%;
+    display: flex;
+    padding: 5px;
+    margin: 0;
+
+}
+
+.two .about-description {
+    display: flex;
+    align-items: center;
+    width: 70%;
+    height: 100%;
+}
+
+.two .about-description p {
+    padding: 0 7%;
+}
+
+.two .head {
+    width: 30%;
+    text-align: center;
+    height: 100%;
+    display: flex;
+    align-items: center;
+}
+
+.two  .header {
+    font-size: 1.3em;
+    padding: 0;
+    margin: -5% 0;
     position: relative;
-    top: 50%;
-    transform: translateY(-50%);
-    display: inline-block;
-    width: 80%;
 }
 
-.photo {
-    position: relative;
-    width: 200px;
-    height: 200px;
-    border-radius: 50%;
-    overflow: hidden;
+.two .photo {
+    background-image:url("../img/me.jpg");
+    background-size: 140%;
+    background-position: 40% 30%;
+    width:90%;
+    border-radius:50%;
+    border:2px solid #000;
+    margin: auto;
+    box-shadow:1px 1px 6px 3px #1d1d1d;
+    transition: 0.5s all;
 }
 
-.photo img {
-    width: 110%;
-    position: absolute;
 
-
+.two .photo:hover {
+    transform: scale(0.99);
+    box-shadow: 1px 1px 2px 2px #1d1d1d;
 }
+
+
+.two .photo::after {
+    content:"";
+    padding-bottom:100%;
+    display:block;
+}
+
+
 
 
 
@@ -321,7 +388,49 @@ nav .nav {
     top: 50%;
     width: 0%;
     height: 50vh;
-    background-color: #9ED4D4;
+    background-color: rgba(93, 3, 3, 0.75);
+}
+
+.three .inner {
+    display: block;
+    text-align: center;
+    font-family: lato, sans-serif;
+    overflow: auto;
+}
+
+.three form {
+    margin-top: 30px;
+    margin-bottom: 20px;
+}
+
+.three .inner form label {
+    display: block;
+    margin-top: 15px;
+}
+
+.three input, .three textarea {
+    width: 80%;
+    border: 3px double #444;
+    border-radius: 0px;
+    font-family: lato, sans-serif;
+    height: 30px;
+    padding: 5px 10px;
+}
+
+.three textarea {
+    height: 60px;
+    margin-bottom: 5px;
+}
+
+.three input[type='submit']{
+    color: #111;
+    background-color: #F1D3B9;
+    border: 1px solid #DF9E98;
+    font-size: 0.9em;
+}
+
+.three input:focus, .three textarea:focus{
+    outline: 2px solid #DF9E98;
 }
 
 .four {
@@ -330,7 +439,23 @@ nav .nav {
     bottom: 25%;
     width: 25%;
     height: 0vh;
-    background-color: #B5C7DD;
+    background-color: rgba(70, 74, 3, 0.6);
+}
+
+.four .inner {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    padding-top: 5%;
+}
+
+
+.four a img {
+    height: 10vh;
+}
+
+.invert:hover {
+    filter: invert(100%);
 }
 
 .five {
@@ -339,7 +464,7 @@ nav .nav {
     top: 75%;
     width: 0%;
     height: 25vh;
-    background-color: #FCFDFF;
+    background-color: rgba(58, 3, 49, 0.4);
 }
 
 .six {
@@ -348,8 +473,10 @@ nav .nav {
     bottom: 12.5%;
     width: 12.5%;
     height: 0vh;
-    background-color: #DF9E98;
+    background-color: rgba(1, 45, 43, 0.3);
 }
+
+
 
 .seven {
     position: absolute;
@@ -357,7 +484,18 @@ nav .nav {
     top: 87.5%;
     width: 0;
     height: 12.5vh;
-    background-color: #F1D3B9;
+    background-color: rgba(4, 1, 23, 0.2);
+}
+
+
+
+.seven p {
+    display: none;
+    position: absolute;
+    text-align: center;
+    width: 100%;
+    font-family: lato, sans-serif;
+    font-size: 1em;    
 }
 
 #btn {
@@ -405,22 +543,80 @@ button:focus {
     body {
         overflow: auto;
     }
-
+    
+    #btn {
+        display: none;
+    }
+    
     nav {
-        display: block !important;
+        display: flex !important;
         width: 100% !important;
+        flex-direction: column !important;
     }
  
     .nav {
-     display: block !important;
+/*     display: flex !important;*/
      width: 100% !important;
      position: static !important;
-     height: 500px !important;
+     height: 100% !important;
      overflow: visible !important; 
      }
 
- .inner {
-     opacity: 1 !important;
- }
+    .nav .inner a img{
+        position: relative;
+        height: 80px;
+    }
+    
+    main {
+        height: 100vh;
+    }
+    
+     .inner {
+         opacity: 1 !important;
+         padding: 30px 0;
+     }
+    
+    .one .inner {
+        margin-top: 0;
+    }
+    
+    
+    .inner .title {
+        position: relative;
+        padding: 20px 0;
+    }
 
+    .one {
+        order: 2;
+    }
+    .two{
+        order: 1;
+    }
+    
+    .two .about {
+        
+    }
+    
+    .three{
+        order: 4;
+    }
+    .four{
+        order: 3;
+
+    }
+    .five{
+        order: 5;
+        display: none !important;
+    }
+    .six {
+        order: 6;
+        display: none  !important;
+    }
+    .seven{
+        order: 7;
+    }
+    .seven p {
+        display: block;
+    }
+    
 }
