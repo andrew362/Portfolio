@@ -1,5 +1,5 @@
 
-  @font-face {
+@font-face {
     font-family: "rubber";
     src: url("../fonts/Rubber.ttf");
 }
@@ -32,22 +32,20 @@ body {
     overflow: hidden;
 }
 
-::-webkit-scrollbar-track
-{
+::-webkit-scrollbar-track{
 	-webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3);
 	background-color: #F5F5F5;
 }
 
-::-webkit-scrollbar
-{
+::-webkit-scrollbar{
 	width: 8px;
 	background-color: #F5F5F5;
 }
 
-::-webkit-scrollbar-thumb
-{
+::-webkit-scrollbar-thumb{
 	background-color: #777;
 }
+
 
 
 .background {
@@ -336,6 +334,7 @@ nav .nav {
 
 .two .about-description p {
     padding: 0 7%;
+	font-family: lato, sans-serif;
 }
 
 .two .head {
@@ -388,7 +387,7 @@ nav .nav {
     top: 50%;
     width: 0%;
     height: 50vh;
-    background-color: rgba(93, 3, 3, 0.75);
+    background-color: rgba(82, 22, 22, 0.75);
 }
 
 .three .inner {
@@ -419,14 +418,24 @@ nav .nav {
 
 .three textarea {
     height: 60px;
-    margin-bottom: 5px;
 }
 
-.three input[type='submit']{
+.three button[type='submit']{
     color: #111;
-    background-color: #F1D3B9;
-    border: 1px solid #DF9E98;
+    width: 80%;
+    height: 30px;
+    background-color: #DF9E98;
+    border: 2px solid #DF9E98;
     font-size: 0.9em;
+	cursor: pointer;
+    margin-top: 10px;
+    box-shadow:1px 1px 6px 3px #1d1d1d;
+    transition: 0.5s all;
+}
+
+.three button[type='submit']:hover{
+    transform: scale(0.99);
+    box-shadow: 1px 1px 2px 2px #1d1d1d;
 }
 
 .three input:focus, .three textarea:focus{
@@ -522,6 +531,56 @@ nav .nav {
 
 button:focus {
     outline: 0;
+}
+
+
+
+
+.form input[type=email].error,
+.form textarea.error,
+
+.field-error {
+    color:#ff0000;
+}
+
+.form .send-error {
+    display:inline-block;
+    color:#ff0000;
+}
+.form-send-success {
+    text-align:center;
+    border:1px solid #eee;
+    color:#fff;
+    padding:1rem 0;
+    margin:1rem auto;
+}
+
+.element-is-busy {
+    position: relative;
+    pointer-events: none;
+    opacity:0.5;
+}
+.element-is-busy::after {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    border: 2px solid rgba(0, 0, 0, 0.8);
+    border-right-color: rgba(0,0,0,0.7);
+    transform: translate(-50%, -50%) rotate(0deg);
+    content:'';
+    animation: rotateSingleLoading 0.3s infinite linear;
+    z-index: 100;
+}
+@keyframes rotateSingleLoading {
+    from {
+        transform: translate(-50%, -50%) rotate(0deg);
+    }
+    to {
+        transform: translate(-50%, -50%) rotate(360deg);
+    }
 }
 
 

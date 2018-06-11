@@ -7,11 +7,23 @@
     <title>Portfolio Andrzej Lichoń</title>
     <meta name="Author" content="" />
     <link href="https://fonts.googleapis.com/css?family=Roboto:300|600" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css?family=Lato:100,300|Open+Sans:300" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Lato:300|Open+Sans:300" rel="stylesheet">
     <link rel="stylesheet" href="./style/css.css">
+    <link rel="stylesheet" href="./style/loader.css">
+    
+
+    
 </head>
 
 <body>
+   <div id="loader-wrapper">
+        <div id="loader"></div>
+        <div class="loader-section section-left"></div>
+        <div class="loader-section section-right"></div>
+    </div>
+   
+   
+   
     <div class="background ">
          
         <object id="my-svg" type="image/svg+xml"  data="./img/background.svg">     
@@ -79,26 +91,30 @@
             <div class="three nav">
                 <div class="inner">
                     <h2>Kontakt</h2>
-                    <form action="" method="post" >
-                        <label for="email">E-mail:
-                        </label>
-                        <input type="email" placeholder="Wpisz swój e-mail" required>
-            
-                        <label for="message">Wiadomość:
-                        </label>
-                        <textarea name="message"  placeholder="Napisz do mnie..."  required></textarea>
-                        <input type="submit" value="Wyślij">
-                        
+                    <form class="form"  id="contactForm" method="post" action="send-script.php" novalidate>
+                        <div class="form-row">
+                            <label for="email">E-mail:
+                            </label>
+                            <input type="email" placeholder="Wpisz swój e-mail" name="email" required id="field-email" data-error="Wpisz poprawny email" pattern="[^@\s]+@[^@\s]+\.[^@\s]+">
+                        </div>
+                        <div class="form-row">
+                            <label for="message">Wiadomość:
+                            </label>
+                            <textarea name="message" required data-error="Musisz wypełnić pole" id="field-message" pattern=".+"  placeholder="Napisz do mnie..."  ></textarea>
+                        </div>
+                        <div class="form-row">
+                            <button class="" type="submit">Wyślij</button>
+                        </div>
                         
                     </form>
                 </div>
             </div>
             <div class="four nav">
                 <div class="inner">
-                    <a href="https://github.com/andrew362" target="_blank">
+                    <a href="https://pl.linkedin.com/in/andrzejlichon" target="_blank">
                         <img class="invert" src="./img/linkedin.svg" alt="github">
                     </a>
-                    <a href="https://github.com/andrew362" target="_blank">
+                    <a href="https://www.facebook.com/andrzej.lichon.3" target="_blank">
                         <img class="invert" src="./img/facebook.svg" alt="github">
                     </a>
                     <a href="https://github.com/andrew362" target="_blank">
@@ -137,6 +153,7 @@
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <script src="./scripts/script.js" ></script>
+    <script src="./scripts/emailScripts.js" ></script>
 
 </body>
 

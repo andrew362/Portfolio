@@ -1,3 +1,6 @@
+(function(){
+    
+    
     
         var one = $('.one');
         var two = $('.two');
@@ -11,10 +14,20 @@
         var innerDiv = $('.inner');
         var div = $('nav .nav');
         var box = $('.box');
-     
+        var windowWidth = window.innerWidth;
+        var windowHeight = window.innerHeight;
 
-var windowWidth = window.innerWidth;
-var windowHeight = window.innerHeight;
+    
+$(document).ready(function() {
+    setTimeout(function(){
+        $('body').addClass('loaded');
+    }, 0);
+});
+
+    
+    
+    
+
 if (windowHeight > '1070' || windowWidth > '1910') {
         var objectBG = document.getElementById('my-svg');
         var secondBG = document.getElementById('secondBG');
@@ -217,3 +230,6 @@ document.getElementById("my-svg").addEventListener("load", function () {
             oneInner.appendChild(node);
          }
         
+    
+    
+    })();
