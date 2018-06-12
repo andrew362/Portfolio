@@ -1,4 +1,4 @@
-(function(){
+(function($){
     
     
     
@@ -18,7 +18,7 @@
         var windowHeight = window.innerHeight;
 
     
-$(document).ready(function() {
+$(window).on('load', function() {
     setTimeout(function(){
         $('body').addClass('loaded');
     }, 0);
@@ -28,7 +28,7 @@ $(document).ready(function() {
     
     
 
-if (windowHeight > '1070' || windowWidth > '1910') {
+if (windowHeight > '1070' || windowWidth > '1910' || windowWidth < '900') {
         var objectBG = document.getElementById('my-svg');
         var secondBG = document.getElementById('secondBG');
         objectBG.style.display = 'none';
@@ -161,43 +161,43 @@ document.getElementById("my-svg").addEventListener("load", function () {
             {
                 name: 'Aplikacja pogodowa',
                 image: 'weatherApp.jpg',
-                src: '',
+                src: 'http://andrzej-lichon-pl.stackstaging.com/projects/myWeatherApp/',
                 desc: 'Aplikacja pobierająca dane z portalu pogodowego dla wskazanych miast.'
             },
             {
                 name: 'Gra w kolory',
                 image: 'colorGame.jpg',
-                src: '',
+                src: 'http://andrzej-lichon-pl.stackstaging.com/projects/ColorGame/',
                 desc: 'Gra logiczna polegająca na odgadywaniu zadanych kolorów. Dwa tryby trudności. Zliczanie wyników.'
             },
             {
                 name: 'Lista zadań',
                 image: 'todo.jpg',
-                src: '',
+                src: 'http://andrzej-lichon-pl.stackstaging.com/projects/ToDoList/',
                 desc: 'Klasyczna lista zadań. Zapis do LocalStorage. Możliwość edycji.'
             },
             {
                 name: 'Strona WWW',
                 image: 'jarzebak.jpg',
-                src: '',
+                src: 'http://andrzej-lichon-pl.stackstaging.com/projects/Jarzebak/',
                 desc: 'Strona przygotowana dla firmy zajmującej się budową domów.'
             },
             {
                 name: 'Gra Patatap',
                 image: 'patatap.jpg',
-                src: '',
+                src: 'http://andrzej-lichon-pl.stackstaging.com/projects/patatap/',
                 desc: 'Aplikacja odtwarzająca dźwięk i wyświetlająca ksztalty na ekranie.'
             },
             {
                 name: 'Strona WWW',
                 image: 'automobile.jpg',
-                src: '',
+                src: 'http://andrzej-lichon-pl.stackstaging.com/projects/AutomibileRenovation/',
                 desc: 'Strona typu "landing page" z ciekawym efektem wizualnym.'
             },
             {
                 name: 'Strona WWW',
-                image: 'pgs.jpg',
-                src: '',
+                image: 'webdesign.jpg',
+                src: 'http://andrzej-lichon-pl.stackstaging.com/projects/WebDesign/',
                 desc: 'Przykladowa testowa strona.'
             },
         ];
@@ -215,13 +215,13 @@ document.getElementById("my-svg").addEventListener("load", function () {
                     `<div class="container-title">
                         <h3>${portfolioList[i].name}</h3>
                     </div>
-                    <a href="${portfolioList[i].src}">
+                    <a target="_blank" href="${portfolioList[i].src}">
                         <div class="thumbnail-container" style="background-image: url('./img/${portfolioList[i].image}');">
-                        <div class="container-description">
-                            <p>
-                                ${portfolioList[i].desc}
-                            </p>
-                    </div>
+                            <div class="container-description">
+                                <p>
+                                    ${portfolioList[i].desc}
+                                </p>
+                            </div>
                         </div>
                     </a>
                     `;
@@ -232,4 +232,4 @@ document.getElementById("my-svg").addEventListener("load", function () {
         
     
     
-    })();
+    })(jQuery);
