@@ -19,12 +19,13 @@
     var objectBG = document.getElementById('my-svg');
     var secondBG = document.getElementById('secondBG');
 
+
     $(window).on('load', function () {
         setTimeout(function () {
             $('body').addClass('loaded');
         }, 0);
     });
-    
+
     //deaktywacja animacji
     function detectIE() {
         var ua = window.navigator.userAgent;
@@ -53,7 +54,7 @@
         secondBG.className = 'backupBG';
     }
 
-    if (windowHeight > '1070' || windowWidth > '1910' || windowWidth < '900') {
+    if (windowHeight > '1070' || windowWidth > '1910' || windowWidth < '767') {
         objectBG.style.display = 'none';
         secondBG.className = 'backupBG';
     }
@@ -63,21 +64,22 @@
         var hand = doc.getElementById("svgback");
         var pol = hand.getElementsByTagName("polygon");
         for (var i = 0; i < pol.length; i++) {
-            pol[i].setAttribute('style', 'transition: transform 1s');
+            pol[i].setAttribute('style', 'transition: all 1s linear');
+            pol[i].setAttribute("transform", "translate(0 0)");
             pol[i].addEventListener('mouseover', function (e) {
                 this.parentElement.appendChild(this);
                 this.setAttribute("filter", "url(#dropshadow)");
                 this.setAttribute("transform", "scale(1.005)");
-                this.setAttribute("transform", " translate(3 3)");
+                this.setAttribute("transform", "translate(3 3)");
             });
             pol[i].addEventListener('mouseout', function (e) {
                 this.removeAttribute("filter");
-                this.removeAttribute("transform");
+                this.setAttribute("transform", "translate(0 0)");
             });
         }
     });
 
- //Callback Hell! Yeah!!!   
+    //Callback Hell! Yeah!!!   
     function openNav() {
         menuBtn.off('click');
         menuBtn.html('-').toggleClass('pulse');
@@ -207,14 +209,14 @@
             src: 'http://andrzej-lichon-pl.stackstaging.com/projects/WebDesign/',
             desc: 'Przykladowa testowa strona.'
             },
-		{
+        {
             name: 'Front Page',
             image: 'beautifulgallery.jpg',
             src: 'http://andrzej-lichon-pl.stackstaging.com/projects/BeautifulGallery/',
             desc: 'Strona główna portalu z zastowowaniem biblioteki particles.js. Własny design i wykonanie.'
             },
         ];
-    
+
     var oneInner = document.querySelector('.one .inner');
     console.log(oneInner);
     for (var i = 0; i < portfolioList.length; i++) {
@@ -237,5 +239,8 @@
                     </a>
                     `;
         oneInner.appendChild(node);
-    }
+    };
+
+
+
 })(jQuery);

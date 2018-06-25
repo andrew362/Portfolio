@@ -31,18 +31,12 @@ body {
     overflow: hidden;
 }
 
-::-webkit-scrollbar-track {
-    -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+::scrollbar {
+    position: absolute;
+    top: 0;
+    right: 0;
     background-color: #F5F5F5;
-}
-
-::-webkit-scrollbar {
-    width: 8px;
-    background-color: #F5F5F5;
-}
-
-::-webkit-scrollbar-thumb {
-    background-color: #777;
+    z-index: 9999;
 }
 
 .background {
@@ -63,6 +57,7 @@ object {
 
 .backupBG {
     background-image: url('../img/background.jpg');
+    background-size: cover;
     height: 100%;
     width: 100%;
     opacity: 0.95;
@@ -185,24 +180,15 @@ nav .nav {
     -ms-flex-wrap: wrap;
     flex-wrap: wrap;
     padding: 5%;
-    padding-top: 1%;
     opacity: 0;
+    position: relative;
 }
 
 .inner .title {
     display: block;
+    position: relative;
     width: 100%;
-    position: absolute;
-    top: 0;
-    left: 50%;
     text-align: center;
-    -webkit-transform: translateX(-50%);
-    transform: translateX(-50%);
-    font-size: 1.1em;
-    background-color: transparent;
-    padding: 0;
-    margin: -15px 0;
-    z-index: 200;
 }
 
 .one {
@@ -215,12 +201,7 @@ nav .nav {
 }
 
 .one .inner {
-    overflow: auto;
-    margin-top: 75px;
-}
-
-.one .inner h2 {
-    padding-top: 15px;
+    overflow: hidden;
 }
 
 .container {
@@ -238,7 +219,7 @@ nav .nav {
     -webkit-box-align: center;
     -ms-flex-align: center;
     align-items: center;
-    margin: 20px 0;
+    margin: 20px 1%;
     border: 4px double #111;
     border-radius: 0px;
     -webkit-transition: 0.5s all;
@@ -259,7 +240,6 @@ nav .nav {
 
 .container-title {
     text-transform: uppercase;
-
 }
 
 .container a {
@@ -291,23 +271,12 @@ nav .nav {
     justify-content: center;
 }
 
-.container:hover {
-    -webkit-transform: scale(0.99);
-    transform: scale(0.99);
-    -webkit-box-shadow: 1px 1px 2px 2px #1d1d1d;
-    box-shadow: 1px 1px 2px 2px #1d1d1d;
-}
-
-.container:hover .container-description {
-    opacity: 1;
-}
-
 .container-description {
     height: -webkit-fit-content;
     height: -moz-fit-content;
     height: fit-content;
     opacity: 0;
-    -webkit-transition: all 0.5s ;
+    -webkit-transition: all 0.5s;
     transition: all 0.5s;
 }
 
@@ -340,29 +309,19 @@ nav .nav {
 
 .two .inner {
     padding-top: 3%;
-    overflow: auto;
+    overflow: hidden;
 }
 
 .two .about {
     width: 100%;
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
+    display: block;
     position: relative;
-    top: -5%;
     padding: 5px;
-    margin-top: 20px;
 }
 
 .two .about-description {
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-box-align: center;
-    -ms-flex-align: center;
     align-items: center;
-    width: 70%;
-    height: 80%;
+    text-align: justify;
 }
 
 .two .about-description p {
@@ -370,24 +329,22 @@ nav .nav {
     font-family: lato, sans-serif;
 }
 
-.two .head {
-    width: 30%;
-    text-align: center;
-    height: 80%;
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-box-align: center;
-    -ms-flex-align: center;
-    align-items: center;
+.two .photo-container {
+    width: 40%;
+    max-width: 250px;
+    display: block;
+    margin: 0 10px 0 0;
+    float: left;
 }
+
 .two .header {
-    font-size: 1.3em;
-    padding: 0;
-    height: 70px;
-    margin: 0 0;
+    font-size: 1.5em;
+    display: block;
+    width: 100%;
+    text-align: center;
     position: relative;
-    top: -5%;
+    padding: 0;
+    margin: 0;
 }
 
 .two .photo {
@@ -402,13 +359,6 @@ nav .nav {
     box-shadow: 1px 1px 6px 3px #1d1d1d;
     -webkit-transition: 0.5s all;
     transition: 0.5s all;
-}
-
-.two .photo:hover {
-    -webkit-transform: scale(0.99);
-    transform: scale(0.99);
-    -webkit-box-shadow: 1px 1px 2px 2px #1d1d1d;
-    box-shadow: 1px 1px 2px 2px #1d1d1d;
 }
 
 .two .photo::after {
@@ -472,13 +422,6 @@ nav .nav {
     transition: 0.5s all;
 }
 
-.three button[type='submit']:hover {
-    -webkit-transform: scale(0.99);
-    transform: scale(0.99);
-    -webkit-box-shadow: 1px 1px 2px 2px #1d1d1d;
-    box-shadow: 1px 1px 2px 2px #1d1d1d;
-}
-
 .three input:focus,
 .three textarea:focus {
     outline: 2px solid #274bdc;
@@ -509,10 +452,7 @@ nav .nav {
     height: 8vh;
 }
 
-.invert:hover {
-    -webkit-filter: invert(100%);
-    filter: invert(100%);
-}
+
 
 .invert:focus {
     -webkit-filter: invert(100%);
@@ -564,7 +504,7 @@ nav .nav {
     left: 0;
     background-color: black;
     color: #fff;
-    font-size: 3em;
+    font-size: 2em;
     z-index: 999;
     margin: 0;
     padding: 0;
@@ -677,7 +617,50 @@ button:focus {
     }
 }
 
-@media (max-width: 900px) {
+@media (min-width: 767px) {
+    .container:hover {
+        -webkit-transform: scale(0.99);
+        transform: scale(0.99);
+        -webkit-box-shadow: 1px 1px 2px 2px #1d1d1d;
+        box-shadow: 1px 1px 2px 2px #1d1d1d;
+    }
+    .container:hover .container-description {
+        opacity: 1;
+    }
+
+    .two .photo:hover {
+        -webkit-transform: scale(0.99);
+        transform: scale(0.99);
+        -webkit-box-shadow: 1px 1px 2px 2px #1d1d1d;
+        box-shadow: 1px 1px 2px 2px #1d1d1d;
+    }
+
+    .three button[type='submit']:hover {
+        -webkit-transform: scale(0.99);
+        transform: scale(0.99);
+        -webkit-box-shadow: 1px 1px 2px 2px #1d1d1d;
+        box-shadow: 1px 1px 2px 2px #1d1d1d;
+    }
+    .invert:hover {
+        -webkit-filter: invert(100%);
+        filter: invert(100%);
+    }
+}
+
+@media (max-width: 1200px) {
+    .box {
+        min-width: 220px;
+        width: 40%;
+    }
+    .box-row p {
+        font-size: 3.2em;
+    }
+    .box-row--small p {
+        font-size: 1.3em;
+    }
+}
+
+@media (max-width: 767px) {
 
     body {
         overflow: auto;
@@ -736,7 +719,6 @@ button:focus {
         margin-top: 0;
     }
 
-
     .inner .title {
         position: relative;
         padding: 20px 0;
@@ -747,6 +729,11 @@ button:focus {
         -ms-flex-order: 2;
         order: 2;
     }
+
+    .container .container-description {
+        opacity: 0.85;
+    }
+
     .two {
         -webkit-box-ordinal-group: 2;
         -ms-flex-order: 1;
@@ -754,7 +741,14 @@ button:focus {
         margin: 0;
     }
 
-    .two .about {}
+    .two .about .photo-container {
+        width: 70%;
+        max-width: 400px;
+        margin: auto;
+        margin-bottom: 30px;
+        text-align: center;
+        float: none;
+    }
 
     .three {
         -webkit-box-ordinal-group: 5;
