@@ -182,6 +182,7 @@ nav .nav {
     padding: 5%;
     opacity: 0;
     position: relative;
+    color: #222;
 }
 
 .inner .title {
@@ -197,7 +198,7 @@ nav .nav {
     top: 0;
     width: 0%;
     height: 100vh;
-    background-color: rgba(15, 39, 128, 0.89);
+    background-color: rgba(255, 255, 255, 0.67);
 }
 
 .one .inner {
@@ -212,8 +213,8 @@ nav .nav {
     -webkit-box-direction: normal;
     -ms-flex-direction: column;
     flex-direction: column;
-    width: 250px;
-    height: 280px;
+    width: 280px;
+    height: 300px;
     -ms-flex-pack: distribute;
     justify-content: space-around;
     -webkit-box-align: center;
@@ -222,11 +223,11 @@ nav .nav {
     margin: 20px 1%;
     border: 4px double #111;
     border-radius: 0px;
-    -webkit-transition: 0.5s all;
-    transition: 0.5s all;
-    background-color: rgba(177, 223, 232, 0.55);
-    -webkit-box-shadow: 2px 2px 6px 3px #1d1d1d;
-    box-shadow: 2px 2px 6px 3px #1d1d1d;
+    -webkit-transition: 0.3s all;
+    transition: 0.3s all;
+    background-color: rgba(255, 255, 255, 0.8);
+    -webkit-box-shadow: 2px 2px 6px 3px rgba(50, 50, 50, 0.6);
+    box-shadow: 2px 2px 6px 3px rgba(50, 50, 50, 0.6);
 }
 
 .container-title,
@@ -304,7 +305,7 @@ nav .nav {
     bottom: 50%;
     width: 50%;
     height: 0vh;
-    background-color: rgba(4, 70, 109, 0.85);
+    background-color: rgba(199, 201, 218, 0.75);
 }
 
 .two .inner {
@@ -355,10 +356,10 @@ nav .nav {
     border-radius: 50%;
     border: 2px solid #000;
     margin: auto;
-    -webkit-box-shadow: 1px 1px 6px 3px #1d1d1d;
-    box-shadow: 1px 1px 6px 3px #1d1d1d;
-    -webkit-transition: 0.5s all;
-    transition: 0.5s all;
+    -webkit-box-shadow: 1px 1px 6px 3px rgba(50, 50, 50, 0.6);
+    box-shadow: 1px 1px 6px 3px rgba(50, 50, 50, 0.6);
+    -webkit-transition: 0.3s all;
+    transition: 0.3s all;
 }
 
 .two .photo::after {
@@ -373,7 +374,7 @@ nav .nav {
     top: 50%;
     width: 0%;
     height: 50vh;
-    background-color: rgba(82, 22, 22, 0.75);
+    background-color: rgba(157, 159, 177, 0.76);
 }
 
 .three .inner {
@@ -383,9 +384,14 @@ nav .nav {
     overflow: auto;
 }
 
-.three form {
-    margin-top: 7vh;
+.three .form {
+    margin-top: 30px;
     margin-bottom: 20px;
+}
+
+.three .form .form-row:first-child{
+    margin-bottom: 30px;
+    font-weight: 100;
 }
 
 .three .inner form label {
@@ -411,20 +417,20 @@ nav .nav {
     color: #111;
     width: 80%;
     height: 30px;
-    background-color: #DF9E98;
-    border: 2px solid #DF9E98;
+    background-color: #9db6d4;
+    border: 2px solid #a0b9d6;
     font-size: 0.9em;
     cursor: pointer;
     margin-top: 10px;
-    -webkit-box-shadow: 1px 1px 6px 3px #1d1d1d;
-    box-shadow: 1px 1px 6px 3px #1d1d1d;
+    -webkit-box-shadow: 1px 1px 6px 3px rgba(50, 50, 50, 0.6);
+    box-shadow: 1px 2px 4px 2px rgba(50, 50, 50, 0.6);
     -webkit-transition: 0.5s all;
     transition: 0.5s all;
 }
 
 .three input:focus,
 .three textarea:focus {
-    outline: 2px solid #274bdc;
+    outline: 2px solid #666;
 }
 
 .four {
@@ -433,7 +439,7 @@ nav .nav {
     bottom: 25%;
     width: 25%;
     height: 0vh;
-    background-color: rgba(70, 74, 3, 0.6);
+    background-color: rgba(126, 129, 154, 0.76);
 }
 
 .four .inner {
@@ -465,7 +471,7 @@ nav .nav {
     top: 75%;
     width: 0%;
     height: 25vh;
-    background-color: rgba(58, 3, 49, 0.4);
+    background-color: rgba(109, 112, 140, 0.76);
 }
 
 .six {
@@ -474,7 +480,7 @@ nav .nav {
     bottom: 12.5%;
     width: 12.5%;
     height: 0vh;
-    background-color: rgba(1, 45, 43, 0.3);
+    background-color: rgba(94, 97, 125, 0.76);
 }
 
 .seven {
@@ -483,7 +489,7 @@ nav .nav {
     top: 87.5%;
     width: 0;
     height: 12.5vh;
-    background-color: rgba(4, 1, 23, 0.2);
+    background-color: rgba(76, 78, 103, 0.76);
 }
 
 .seven p {
@@ -619,27 +625,27 @@ button:focus {
 
 @media (min-width: 767px) {
     .container:hover {
-        -webkit-transform: scale(0.99);
-        transform: scale(0.99);
-        -webkit-box-shadow: 1px 1px 2px 2px #1d1d1d;
-        box-shadow: 1px 1px 2px 2px #1d1d1d;
+        -webkit-transform: scale(0.995);
+        transform: scale(0.995);
+        -webkit-box-shadow: 1px 1px 2px 2px rgba(50, 50, 50, 0.8);
+        box-shadow: 1px 1px 2px 2px rgba(50, 50, 50, 0.8);
     }
     .container:hover .container-description {
         opacity: 1;
     }
 
     .two .photo:hover {
-        -webkit-transform: scale(0.99);
-        transform: scale(0.99);
-        -webkit-box-shadow: 1px 1px 2px 2px #1d1d1d;
-        box-shadow: 1px 1px 2px 2px #1d1d1d;
+        -webkit-transform: scale(0.995);
+        transform: scale(0.995);
+        -webkit-box-shadow: 1px 1px 2px 2px rgba(50, 50, 50, 0.8);
+        box-shadow: 1px 1px 2px 2px rgba(50, 50, 50, 0.8);
     }
 
     .three button[type='submit']:hover {
         -webkit-transform: scale(0.99);
         transform: scale(0.99);
-        -webkit-box-shadow: 1px 1px 2px 2px #1d1d1d;
-        box-shadow: 1px 1px 2px 2px #1d1d1d;
+        -webkit-box-shadow: 1px 1px 2px 2px rgba(50, 50, 50, 0.8);
+        box-shadow: 1px 1px 2px 2px rgba(50, 50, 50, 0.8);
     }
     .invert:hover {
         -webkit-filter: invert(100%);
